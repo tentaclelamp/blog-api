@@ -1,24 +1,12 @@
-from settings import BlogSetting
-from flask import Flask, jsonify
 from flask_restful import Resource, Api, reqparse
 from models.model import Article as Article_Model
-from flask_sqlalchemy import SQLAlchemy
 from marshmallow import Schema, fields
+from flask import Blueprint
+from models.model import db
+from flask_login import login_required
 
-app = Flask(__name__)
-app.config.from_object(BlogSetting)
-
-api = Api(app)
-db = SQLAlchemy(app)
-
-
-@app.after_request
-def after_request(response):
-    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization,session_id')
-    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS,HEAD')
-    # 这里不能使用add方法，否则会出现 The 'Access-Control-Allow-Origin' header contains multiple values 的问题
-    response.headers['Access-Control-Allow-Origin'] = '*'
-    return response
+api_bp = Blueprint('api', __name__)
+api = Api(api_bp)
 
 
 class S_Articles(Schema):
@@ -57,21 +45,20 @@ class Articles(Resource):
         db.session.add(article)
         db.session.flush()
         db.session.commit()
+        db.session.close()
         return {'worked': args}
 
+    @login_required
     def delete(self):
         parser = reqparse.RequestParser()
         parser.add_argument('id')
         args = parser.parse_args()
         article_to_delete = Article_Model.query.filter_by(id=args['id']).first()
-        from models.model import db
+        # from models.model import db
         db.session.delete(article_to_delete)
         db.session.commit()
+        db.session.close()
         return 'article %s has been deleted' % args['id']
 
 
 api.add_resource(Articles, '/api/v1/articles')
-
-if __name__ == '__main__':
-    app.config.from_object(BlogSetting)
-    app.run()

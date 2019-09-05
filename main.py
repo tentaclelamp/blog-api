@@ -1,20 +1,18 @@
 from settings import BlogSetting
 from flask import Flask
 
-from app.api_1_0.api import db, api_bp
-from models.model import model
+# from app.api_1_0.api import db
+from app.api_1_0 import api_bp
+from models.model import model, login_manager
 from flask_script import Manager, Shell
 from flask_migrate import Migrate, MigrateCommand
-from models.model import User
-from flask_login import LoginManager
+from models.model import User,db
 
 app = Flask(__name__)
 app.config.from_object(BlogSetting)
 
 db.init_app(app)
-
-login_manager = LoginManager(app)
-login_manager.session_protection = 'strong'
+login_manager.init_app(app)
 
 manager = Manager(app)
 migrate = Migrate(app, db)

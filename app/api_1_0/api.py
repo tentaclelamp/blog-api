@@ -1,12 +1,10 @@
-from flask_restful import Resource, Api, reqparse
+from flask_restful import Resource, reqparse
 from models.model import Article as Article_Model
 from marshmallow import Schema, fields
-from flask import Blueprint
 from models.model import db
-from flask_login import login_required
-
-api_bp = Blueprint('api', __name__)
-api = Api(api_bp)
+from .auth import auth
+from . import api
+from ..libs.errors import ApiException
 
 
 class S_Articles(Schema):
@@ -20,8 +18,14 @@ class HelloWorld(Resource):
     def get(self):
         return {'hello': 'world'}
 
+class paramsException(ApiException):
+    code = 'F400'
+    msg = '参数错误'
+    error_code = 0
+
 
 class Articles(Resource):
+    @auth.login_required
     def get(self):
         parser = reqparse.RequestParser()
         # parser.add_argument('rate', type=int, help='Rate cannot be converted')
@@ -32,11 +36,13 @@ class Articles(Resource):
             schema = S_Articles()
             articles_to_return = schema.dump(articles_to_return, len(articles_to_return))
         else:
-            articles_to_return = {}
+            # raise ApiException(msg='参数错误')
+            articles_to_return = {'respCode': 'F4001', 'respMessage': '参数错误'}
         return articles_to_return
 
     def post(self):
-        parser = reqparse.RequestParser()
+        self.parser = reqparse.RequestParser()
+        parser = self.parser
         # parser.add_argument('rate', type=int, help='Rate cannot be converted')
         parser.add_argument('title')
         parser.add_argument('content')
@@ -48,7 +54,7 @@ class Articles(Resource):
         db.session.close()
         return {'worked': args}
 
-    @login_required
+    @auth.login_required
     def delete(self):
         parser = reqparse.RequestParser()
         parser.add_argument('id')

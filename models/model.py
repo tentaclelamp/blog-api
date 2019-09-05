@@ -2,13 +2,18 @@ from flask_sqlalchemy import SQLAlchemy
 from flask import Blueprint
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import UserMixin
+from flask_login import UserMixin, LoginManager
+from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
+from flask import current_app
 
 model = Blueprint('model', __name__)
 db = SQLAlchemy()
 
+login_manager = LoginManager()
+login_manager.session_protection = 'strong'
 
-class User(UserMixin, db.Model):
+
+class User(db.Model, UserMixin):
     __tablename__ = "user"
 
     id = db.Column(db.Integer, primary_key=True)
@@ -25,6 +30,23 @@ class User(UserMixin, db.Model):
 
     def verify_password(self, password):
         return check_password_hash(self.password_hash, password)
+
+    # @login_manager.user_loader
+    # def load_user(user_id):
+    #     return User.query.get(int(user_id))
+
+    def generate_auth_token(self, expioration=3600):
+        s = Serializer(current_app.confg['SECRET_KEY'], expires_in=expioration)
+        return s.dump({'id': self.id})
+
+    @staticmethod
+    def verify_auth_token(token):
+        s = Serializer(current_app.config['SECRET_KEY'])
+        try:
+            data = s.load(token)
+        except:
+            return None
+        return User.query.get(data['id'])
 
 
 class Article(db.Model):

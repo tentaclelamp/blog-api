@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7076fc37-a45b-4d71-bedc-5caf98897fd8" name="Default Changelist" comment="'登录验证'">
-      <change afterPath="$PROJECT_DIR$/app/api_1_0/auth.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/errors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api_1_0/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api_1_0/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api_1_0/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api_1_0/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="7076fc37-a45b-4d71-bedc-5caf98897fd8" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,12 +59,12 @@
           <entry key="Python Console" value="373" />
           <entry key="dummy" value="24" />
           <entry key="py" value="7190" />
-          <entry key="txt" value="14" />
+          <entry key="txt" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="38" />
+          <entry key="PLAIN_TEXT" value="49" />
           <entry key="Python" value="7563" />
         </counts>
       </usages-collector>
@@ -85,8 +75,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/api_1_0/api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="915">
-              <caret line="61" selection-start-line="61" selection-end-line="61" />
+            <state relative-caret-position="123">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
                 <marker date="1567674330843" expanded="true" signature="504:561" ph="..." />
@@ -171,38 +161,12 @@
             </path>
             <path>
               <item name="blog-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog-api" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog-api" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="api_1_0" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog-api" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog-api" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog-api" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
             <path>
               <item name="blog-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-            </path>
-            <path>
-              <item name="blog-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.5 (blog-api) &gt;" type="70bed36:NamedLibraryElementNode" />
             </path>
           </expand>
           <select />
@@ -212,6 +176,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="raise&#9;null&#9;null" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -294,10 +259,17 @@
       <option name="project" value="LOCAL" />
       <updated>1557626170526</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="'我也不知道提交了什么'">
+      <created>1567675369997</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1567675369997</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -308,18 +280,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="53" y="23" width="1627" height="1027" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3072555" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3072555" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32941177" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32941177" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32941177" />
+      <window_info anchor="bottom" id="TODO" order="6" visible="true" weight="0.32941177" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32941177" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
@@ -390,7 +361,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="'登录验证'" />
-    <option name="LAST_COMMIT_MESSAGE" value="'登录验证'" />
+    <MESSAGE value="'我也不知道提交了什么'" />
+    <option name="LAST_COMMIT_MESSAGE" value="'我也不知道提交了什么'" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -596,8 +568,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/api_1_0/api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="915">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        <state relative-caret-position="123">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
             <marker date="1567674330843" expanded="true" signature="504:561" ph="..." />
